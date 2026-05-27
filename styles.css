@@ -76,34 +76,14 @@ a {
   display: none;
 }
 
-.header-btn,
 .primary-btn,
 .secondary-btn,
-.price-btn,
-.mobile-sticky-cta {
+.price-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   text-decoration: none;
-}
-
-.header-btn {
-  flex: 0 0 auto;
-  min-width: 72px;
-  min-height: 38px;
-  padding: 10px 13px;
-  border-radius: 999px;
-  background: var(--green);
-  color: #ffffff;
-  font-size: 0;
-  font-weight: 850;
-  line-height: 1.05;
-}
-
-.header-btn::after {
-  content: "Бронь";
-  font-size: 14px;
 }
 
 .hero-section,
@@ -517,6 +497,11 @@ h3 {
   margin-bottom: 24px;
 }
 
+.pricing-head b {
+  color: var(--green-dark);
+  font-weight: 850;
+}
+
 .pricing-badge {
   display: inline-flex;
   align-items: center;
@@ -529,6 +514,28 @@ h3 {
   color: var(--green);
   font-size: 14px;
   font-weight: 850;
+}
+
+.price-timer {
+  display: grid;
+  justify-items: center;
+  gap: 7px;
+  margin: 30px 0;
+  text-align: center;
+}
+
+.price-timer span {
+  color: var(--muted);
+  font-size: 22px;
+  line-height: 1.25;
+}
+
+.price-timer strong {
+  color: var(--text);
+  font-size: clamp(44px, 7vw, 72px);
+  font-weight: 900;
+  letter-spacing: 0;
+  line-height: 1;
 }
 
 .price-card {
@@ -574,6 +581,16 @@ h3 {
 .price-box {
   min-height: 0;
   margin-bottom: 18px;
+}
+
+.old-price {
+  display: inline-block;
+  margin-bottom: 8px;
+  color: #7a8678;
+  font-size: 24px;
+  line-height: 1;
+  text-decoration: line-through;
+  text-decoration-thickness: 2px;
 }
 
 .new-price {
@@ -643,6 +660,19 @@ h3 {
   color: var(--green);
 }
 
+.pricing-footer {
+  margin-top: 22px;
+  padding: 26px 28px;
+  border-radius: 30px;
+}
+
+.pricing-footer b {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 24px;
+  line-height: 1.2;
+}
+
 .booking-section {
   padding-bottom: 96px;
 }
@@ -695,41 +725,18 @@ h3 {
   font-weight: 900;
 }
 
-.header-btn:focus-visible,
 .primary-btn:focus-visible,
 .secondary-btn:focus-visible,
 .price-btn:focus-visible,
-.mobile-sticky-cta:focus-visible,
 .booking-card button:focus-visible,
 .booking-card input:focus-visible {
   outline: 3px solid rgba(94, 116, 70, 0.32);
   outline-offset: 3px;
 }
 
-.mobile-sticky-cta {
-  position: fixed;
-  right: 12px;
-  bottom: 12px;
-  left: 12px;
-  z-index: 30;
-  min-height: 58px;
-  padding: 14px 18px;
-  border-radius: 22px;
-  background: var(--green);
-  color: #ffffff;
-  box-shadow: 0 16px 42px rgba(63, 86, 48, 0.28);
-  font-size: 19px;
-  font-weight: 900;
-  line-height: 1.1;
-}
-
 @media (min-width: 720px) {
   body {
     padding-bottom: 0;
-  }
-
-  .mobile-sticky-cta {
-    display: none;
   }
 
   .site-header {
@@ -755,15 +762,6 @@ h3 {
     font-size: 15px;
     font-weight: 760;
     text-decoration: none;
-  }
-
-  .header-btn {
-    justify-self: end;
-    font-size: 15px;
-  }
-
-  .header-btn::after {
-    content: none;
   }
 
   .hero-section,
@@ -966,10 +964,6 @@ h3 {
 }
 
 @media (max-width: 719px) {
-  body {
-    padding-bottom: 78px;
-  }
-
   .hero-copy p {
     font-size: 18px;
   }
