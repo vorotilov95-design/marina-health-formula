@@ -622,122 +622,209 @@
         </ul>
       </section>
 
-      <section class="pricing-section" id="price">
-        <div class="pricing-container">
-          <header class="pricing-head">
-            <div class="pricing-badge">Старт 1 июля</div>
-            <h2>Выберите удобный способ оплаты</h2>
-            <p>
-              Полная стоимость программы — <b>150 000 ₽</b>. Сейчас действует
-              спеццена. Цена будет расти каждую неделю до старта.
-            </p>
-          </header>
-
-          <div class="price-timer">
-            <span>Спецусловия действуют ещё</span>
-            <strong>11:59:15</strong>
+      <section class="bg-surface-container-low px-gutter-mobile py-section-gap-mobile" id="price">
+        <div class="mb-12">
+          <h3 class="font-section-h2-mobile text-section-h2-mobile text-text-primary mb-4">Выберите удобный способ оплаты</h3>
+          <p class="text-text-muted">Полная стоимость программы — 150 000 ₽. Сейчас действует спеццена. Цена будет расти каждую неделю до старта.</p>
+          <div class="mt-8 p-6 bg-primary-container/10 rounded-[30px] border border-primary-container/20 flex flex-col items-center gap-2">
+            <p class="text-sm font-bold text-primary uppercase tracking-widest opacity-70">Спецусловия действуют ещё</p>
+            <div class="text-4xl font-black text-primary tracking-tight" id="timer">12:50:52</div>
           </div>
+        </div>
 
-          <div class="pricing-grid">
-            <article class="price-card main-card">
-              <div class="card-label">Самая выгодная цена</div>
-              <div class="card-top">
-                <h3>Оплата сразу</h3>
-                <div class="price-box">
-                  <div class="old-price">150 000 ₽</div>
-                  <div class="new-price">99 000 ₽</div>
-                </div>
-              </div>
-              <p class="price-note">
-                Для тех, кто хочет забрать место по минимальной цене до повышения.
-              </p>
-              <ul>
-                <li>3 месяца сопровождения</li>
-                <li>Куратор в чате каждый день</li>
-                <li>Марина контролирует процесс и даёт обратную связь</li>
-                <li>Персональная программа и стратегия питания</li>
-                <li>Разбор анализов в рамках нутрициологической поддержки</li>
-              </ul>
-              <a href="#booking" class="price-btn">Забрать место</a>
-            </article>
+        <div class="space-y-8">
+          <article class="bg-white p-6 rounded-[30px] border-2 border-primary organic-shadow relative flex flex-col">
+            <div class="absolute -top-3 left-6">
+              <span class="bg-primary text-white text-[11px] px-4 py-1.5 rounded-full uppercase font-black tracking-wider shadow-md">Самая выгодная цена</span>
+            </div>
+            <h4 class="font-card-h3 text-2xl mt-4 mb-2">Оплата сразу</h4>
+            <div class="flex flex-col gap-1 mb-4">
+              <span class="text-text-muted line-through text-lg opacity-60">150 000 ₽</span>
+              <span class="text-5xl font-black text-text-primary tracking-tighter">99 000 ₽</span>
+            </div>
+            <p class="text-text-muted text-[15px] mb-6 leading-snug">Для тех, кто хочет забрать место по минимальной цене до повышения.</p>
+            <ul class="space-y-3 mb-8">
+              <li class="flex items-start gap-3">
+                <span class="material-symbols-outlined text-primary text-[20px] mt-0.5">check_circle</span>
+                <span class="text-sm text-on-surface/80">3 месяца сопровождения</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="material-symbols-outlined text-primary text-[20px] mt-0.5">check_circle</span>
+                <span class="text-sm text-on-surface/80">Куратор в чате каждый день</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="material-symbols-outlined text-primary text-[20px] mt-0.5">check_circle</span>
+                <span class="text-sm text-on-surface/80">Марина контролирует процесс и даёт обратную связь</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="material-symbols-outlined text-primary text-[20px] mt-0.5">check_circle</span>
+                <span class="text-sm text-on-surface/80">Персональная программа и стратегия питания</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="material-symbols-outlined text-primary text-[20px] mt-0.5">check_circle</span>
+                <span class="text-sm text-on-surface/80">Разбор анализов в рамках нутрициологической поддержки</span>
+              </li>
+            </ul>
+            <a class="w-full bg-primary text-white h-[64px] rounded-2xl font-[880] text-lg active-scale shadow-lg shadow-primary/20 flex items-center justify-center" href="#booking">Забрать место</a>
+          </article>
 
-            <article class="price-card">
-              <div class="card-label soft">Оплата частями</div>
-              <div class="card-top">
-                <h3>Внутренняя рассрочка</h3>
-                <div class="price-box">
-                  <div class="old-price">150 000 ₽</div>
-                  <div class="new-price small">39 000 ₽/мес</div>
-                  <div class="total-price">3 платежа · всего 117 000 ₽</div>
-                </div>
-              </div>
-              <p class="price-note">
-                Если удобнее оплачивать программу по месяцам внутри проекта.
-              </p>
-              <ul>
-                <li>Всё наполнение программы</li>
-                <li>Доступ сохраняется при своевременной оплате</li>
-                <li>Подходит, если не хочется оплачивать всю сумму сразу</li>
-              </ul>
-              <a href="#booking" class="price-btn secondary">Выбрать вариант</a>
-            </article>
+          <article class="bg-white p-6 rounded-[30px] border border-border-soft organic-shadow flex flex-col">
+            <div class="self-start mb-4">
+              <span class="bg-secondary-container text-on-secondary-container text-[11px] px-4 py-1.5 rounded-full uppercase font-black tracking-wider">Оплата частями</span>
+            </div>
+            <h4 class="font-card-h3 text-2xl mb-2">Внутренняя рассрочка</h4>
+            <div class="flex flex-col gap-1 mb-2">
+              <span class="text-text-muted line-through text-lg opacity-60">150 000 ₽</span>
+              <span class="text-3xl font-black text-text-primary tracking-tight">39 000 ₽/мес</span>
+            </div>
+            <p class="text-primary font-bold text-sm mb-4">3 платежа · всего 117 000 ₽</p>
+            <p class="text-text-muted text-[15px] mb-6 leading-snug">Если удобнее оплачивать программу по месяцам внутри проекта.</p>
+            <ul class="space-y-3 mb-8">
+              <li class="flex items-start gap-3">
+                <span class="material-symbols-outlined text-primary text-[20px] mt-0.5">check_circle</span>
+                <span class="text-sm text-on-surface/80">Всё наполнение программы</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="material-symbols-outlined text-primary text-[20px] mt-0.5">check_circle</span>
+                <span class="text-sm text-on-surface/80">Доступ сохраняется при своевременной оплате</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="material-symbols-outlined text-primary text-[20px] mt-0.5">check_circle</span>
+                <span class="text-sm text-on-surface/80">Подходит, если не хочется оплачивать всю сумму сразу</span>
+              </li>
+            </ul>
+            <a class="w-full bg-surface-container text-on-surface-variant h-[64px] rounded-2xl font-[880] text-lg active-scale flex items-center justify-center" href="#booking">Выбрать вариант</a>
+          </article>
 
-            <article class="price-card">
-              <div class="card-label soft">Низкий платёж</div>
-              <div class="card-top">
-                <h3>Банковская рассрочка</h3>
-                <div class="price-box">
-                  <div class="old-price">150 000 ₽</div>
-                  <div class="new-price small">от 10 900 ₽/мес</div>
-                  <div class="total-price">до 12 месяцев · всего 130 800 ₽</div>
-                </div>
-              </div>
-              <p class="price-note">
-                Удобно, если хочется пройти программу сейчас, но распределить оплату.
-              </p>
-              <ul>
-                <li>Можно выбрать срок рассрочки</li>
-                <li>Решение принимает банк</li>
-                <li>Если банк не одобрит, предложим другой вариант оплаты</li>
-              </ul>
-              <a href="#booking" class="price-btn secondary">Оформить рассрочку</a>
-            </article>
-          </div>
+          <article class="bg-white p-6 rounded-[30px] border border-border-soft organic-shadow flex flex-col">
+            <div class="self-start mb-4">
+              <span class="bg-surface-container-high text-on-surface-variant text-[11px] px-4 py-1.5 rounded-full uppercase font-black tracking-wider">Низкий платёж</span>
+            </div>
+            <h4 class="font-card-h3 text-2xl mb-2">Банковская рассрочка</h4>
+            <div class="flex flex-col gap-1 mb-2">
+              <span class="text-text-muted line-through text-lg opacity-60">150 000 ₽</span>
+              <span class="text-3xl font-black text-text-primary tracking-tight">от 10 900 ₽/мес</span>
+            </div>
+            <p class="text-primary font-bold text-sm mb-4">до 12 месяцев · всего 130 800 ₽</p>
+            <p class="text-text-muted text-[15px] mb-6 leading-snug">Удобно, если хочется пройти программу сейчас, но распределить оплату.</p>
+            <ul class="space-y-3 mb-8">
+              <li class="flex items-start gap-3">
+                <span class="material-symbols-outlined text-primary text-[20px] mt-0.5">check_circle</span>
+                <span class="text-sm text-on-surface/80">Можно выбрать срок рассрочки</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="material-symbols-outlined text-primary text-[20px] mt-0.5">check_circle</span>
+                <span class="text-sm text-on-surface/80">Решение принимает банк</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="material-symbols-outlined text-primary text-[20px] mt-0.5">check_circle</span>
+                <span class="text-sm text-on-surface/80">Если банк не одобрит, предложим другой вариант оплаты</span>
+              </li>
+            </ul>
+            <a class="w-full bg-surface-container text-on-surface-variant h-[64px] rounded-2xl font-[880] text-lg active-scale flex items-center justify-center" href="#booking">Оформить рассрочку</a>
+          </article>
+        </div>
 
-          <aside class="pricing-footer">
-            <b>Что входит во все варианты оплаты:</b>
-            <p>
-              Персональная программа на три месяца, сопровождение куратора,
-              контроль Марины, проверка тарелок, работа с питанием, ЖКТ,
-              энергией, сном, привычками и закреплением результата.
-            </p>
-          </aside>
+        <aside class="mt-12 bg-white p-6 rounded-[30px] border border-border-soft organic-shadow">
+          <h5 class="font-bold text-lg mb-3">Что входит во все варианты оплаты:</h5>
+          <p class="text-text-muted text-sm leading-relaxed">Персональная программа на три месяца, сопровождение куратора, контроль Марины, проверка тарелок, работа с питанием, ЖКТ, энергией, сном, привычками и закреплением результата.</p>
+        </aside>
+      </section>
+
+      <section class="px-gutter-mobile py-section-gap-mobile" id="team">
+        <h3 class="font-section-h2-mobile text-section-h2-mobile text-text-primary mb-8">Ваша команда</h3>
+        <div class="flex overflow-x-auto gap-4 no-scrollbar -mx-gutter-mobile px-gutter-mobile">
+          <article class="min-w-[280px] bg-white rounded-[30px] overflow-hidden organic-shadow border border-border-soft">
+            <div class="h-64 bg-slate-100">
+              <img
+                alt="Марина Сикальчук"
+                class="w-full h-full object-cover"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPN4-PP_ayPqANjutswHOsR09A2AKKaVxFYjVJBf5DopkxWWhrnTedBGVUmZwsbIrVMO6ZwkLmrCkkeZI1FynEOsuNpJ3FRYLydmjbYj_jrqo3VcPbj1UFxG-IgxfgmxdNbb-pzaU0f0nqfAsNBP8RgyCdB6aF0zqtGnocQJOmZPIXOYJxNn8eUE9qx41NKiFJea0ppyb26sYbtzLVivmqgXTNQeGBRLjPMzlEJqbxe6kGhccwyttdpxjxQsTZvcvPK4zXwzHjHbadzQk"
+                style="object-position: 50% 20%;"
+              />
+            </div>
+            <div class="p-6">
+              <h4 class="font-bold text-lg">Марина Сикальчук</h4>
+              <p class="text-primary text-sm font-bold mb-2">Нутрициолог, автор программы</p>
+            </div>
+          </article>
+
+          <article class="min-w-[280px] bg-white rounded-[30px] overflow-hidden organic-shadow border border-border-soft">
+            <div class="h-64 bg-slate-100">
+              <img
+                alt="Куратор"
+                class="w-full h-full object-cover"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuATuPWL001M4Z3ZxSsY4HxX2vb6DLthfCkmQTacL-4oGLs8nDdHE6dMb38RU0KY_yofYLWInYHHTDPFb2a9go8petBR-k1_KwCgkUCPBYbJRcSMpC_7f5IaQilFEGKgAkv-LYIQv0P_QinOIJ50AaBUi4NG3ZxCufg3-PG_C7Ijh6hiiTkcMS5b8WbZllfHh4AXsQjqm_N0gOkcxCMQYIwIhiD-i1tr_HGOXdPdexRdqAlWaMPVgd1PIogPuPXg_13DWXvOq_VMo99U"
+              />
+            </div>
+            <div class="p-6">
+              <h4 class="font-bold text-lg">Куратор</h4>
+              <p class="text-primary text-sm font-bold mb-2">Поддержка 24/7</p>
+            </div>
+          </article>
+
+          <article class="min-w-[280px] bg-white rounded-[30px] overflow-hidden organic-shadow border border-border-soft">
+            <div class="h-64 bg-slate-100">
+              <img
+                alt="Врачи DocMed"
+                class="w-full h-full object-cover"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCWv83ga6PiO0gvxiFpIuhjr9JdfDNIBMizg3o7RRXS5wKim87BiLiyzxbHvbpgvSC8RMgcqCqXr6icUKwn0ouU3p8q_fgv36gtrA7q0x6vPODnqoXYRH4W29qMo0Wi6x0TkDH77r-KdOsbrt-FisaJ7E1cgq4aXDpZHP-f3irZsR-9vD6fgJ1aCkYX4nFyCjkdXoWfXoaKsGnMoxvDX5LjJFYvfYPPG1ChLmPsYt5HFSexOrUP9PtOcZTLYrzpmkaZLKwfV6fbFnq"
+              />
+            </div>
+            <div class="p-6">
+              <h4 class="font-bold text-lg">Врачи DocMed</h4>
+              <p class="text-primary text-sm font-bold mb-2">Медицинская экспертиза</p>
+            </div>
+          </article>
         </div>
       </section>
 
-      <section class="booking-section" id="booking">
-        <div class="booking-card">
-          <div>
-            <span class="eyebrow">Предзапись</span>
-            <h2>Оставьте заявку на участие</h2>
-            <p>
-              Оставьте контакт — дальше можно обсудить стартовую точку,
-              анализы, формат оплаты и первые шаги.
-            </p>
-          </div>
-          <form>
-            <label>
-              Имя
-              <input type="text" name="name" placeholder="Как к вам обращаться" />
-            </label>
-            <label>
-              Телефон или Telegram
-              <input type="text" name="contact" placeholder="@username или номер" />
-            </label>
-            <button type="button">Хочу в программу</button>
+      <section class="px-gutter-mobile py-section-gap-mobile" id="booking">
+        <div class="bg-primary-container p-8 rounded-[40px] text-white text-center organic-shadow relative overflow-hidden">
+          <div class="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-16 -mt-16 blur-2xl"></div>
+          <h3 class="font-section-h2-mobile text-3xl mb-6">Готовы к изменениям?</h3>
+          <p class="opacity-90 mb-8 leading-relaxed">
+            Оставьте заявку — мы посмотрим вашу стартовую точку, запрос и подскажем, подойдёт ли вам программа сейчас.
+          </p>
+          <form class="space-y-4">
+            <input class="w-full h-14 rounded-2xl border-none bg-white/10 placeholder:text-white/60 focus:ring-2 focus:ring-white/30 text-white px-6" placeholder="Ваше имя" type="text" />
+            <input class="w-full h-14 rounded-2xl border-none bg-white/10 placeholder:text-white/60 focus:ring-2 focus:ring-white/30 text-white px-6" placeholder="+7 (___) ___-__-__" type="tel" />
+            <input class="w-full h-14 rounded-2xl border-none bg-white/10 placeholder:text-white/60 focus:ring-2 focus:ring-white/30 text-white px-6" placeholder="@username в Telegram" type="text" />
+            <button class="w-full bg-white text-primary h-[60px] rounded-2xl font-[880] text-lg active-scale" type="button">
+              Отправить заявку
+            </button>
           </form>
+          <p class="mt-6 text-[10px] opacity-60">Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности</p>
         </div>
       </section>
     </main>
+
+    <script>
+      function startTimer(duration, display) {
+        var timer = duration;
+        setInterval(function () {
+          var hours = parseInt(timer / 3600, 10);
+          var minutes = parseInt((timer % 3600) / 60, 10);
+          var seconds = parseInt(timer % 60, 10);
+
+          hours = hours < 10 ? "0" + hours : hours;
+          minutes = minutes < 10 ? "0" + minutes : minutes;
+          seconds = seconds < 10 ? "0" + seconds : seconds;
+
+          display.textContent = hours + ":" + minutes + ":" + seconds;
+
+          if (--timer < 0) {
+            timer = duration;
+          }
+        }, 1000);
+      }
+
+      window.addEventListener("load", function () {
+        var display = document.querySelector("#timer");
+        if (display) {
+          startTimer(60 * 60 * 12 + 51 * 60 + 6, display);
+        }
+      });
+    </script>
   </body>
 </html>
