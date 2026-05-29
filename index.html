@@ -1,292 +1,625 @@
 <!doctype html>
-<html lang="ru">
+<html class="light" lang="ru">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Формула здоровья на три месяца</title>
-    <link rel="stylesheet" href="styles.css?v=visual-20260528" />
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport" />
+    <title>Формула здоровья — Программа Марины Сикальчук</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css?v=landing-stitch-20260529" />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-background": "#181c1b",
+              "surface-tint": "#4f6538",
+              "tertiary-container": "#5c744b",
+              "on-tertiary-fixed": "#0c2002",
+              tertiary: "#445b35",
+              "on-surface": "#181c1b",
+              background: "#f7faf7",
+              "sage-accent": "#DFE8D8",
+              "surface-container-highest": "#e0e3e0",
+              "border-soft": "#DDE7DA",
+              secondary: "#5a6058",
+              "tertiary-fixed-dim": "#b4cf9f",
+              "surface-container-lowest": "#ffffff",
+              "tertiary-fixed": "#cfebb9",
+              "inverse-surface": "#2d3130",
+              "on-surface-variant": "#44483e",
+              "outline-variant": "#c5c8bb",
+              "secondary-container": "#dee4da",
+              "primary-fixed-dim": "#b6cf99",
+              "on-primary-fixed": "#0e2000",
+              "inverse-on-surface": "#eef1ee",
+              "on-primary-container": "#dff9c0",
+              "surface-container-high": "#e6e9e6",
+              outline: "#75786d",
+              "text-primary": "#1A1A1A",
+              "on-secondary": "#ffffff",
+              "surface-bright": "#f7faf7",
+              "surface-variant": "#e0e3e0",
+              "surface-dim": "#d8dbd8",
+              "on-error-container": "#93000a",
+              "on-secondary-container": "#60665e",
+              "on-tertiary-container": "#ddf9c6",
+              "text-muted": "#6F7E6C",
+              "secondary-fixed": "#dee4da",
+              "on-primary-fixed-variant": "#384d23",
+              "surface-container-low": "#f1f4f1",
+              "on-primary": "#ffffff",
+              "on-secondary-fixed": "#171d17",
+              "primary-container": "#5e7446",
+              "on-tertiary-fixed-variant": "#364d28",
+              "shadow-glow": "rgba(70, 88, 62, 0.08)",
+              "on-error": "#ffffff",
+              surface: "#f7faf7",
+              "primary-fixed": "#d2ebb3",
+              error: "#ba1a1a",
+              "error-container": "#ffdad6",
+              "surface-container": "#ecefec",
+              "on-secondary-fixed-variant": "#424841",
+              "secondary-fixed-dim": "#c2c8bf",
+              "inverse-primary": "#b6cf99",
+              "card-surface": "#FFFFFF",
+              primary: "#465b30",
+              "on-tertiary": "#ffffff",
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+            spacing: {
+              "card-padding-lg": "34px",
+              "section-gap-mobile": "48px",
+              "gutter-desktop": "32px",
+              "card-padding-sm": "24px",
+              "section-gap-desktop": "72px",
+              "container-max": "1180px",
+              "gutter-mobile": "24px",
+            },
+            fontFamily: {
+              "label-eyebrow": ["Inter"],
+              "display-h1": ["Inter"],
+              "card-h3": ["Inter"],
+              "body-base": ["Inter"],
+              "body-intro": ["Inter"],
+              "display-h1-mobile": ["Inter"],
+              "section-h2-mobile": ["Inter"],
+              "section-h2": ["Inter"],
+            },
+            fontSize: {
+              "label-eyebrow": ["13px", { lineHeight: "1.1", letterSpacing: "0.05em", fontWeight: "850" }],
+              "display-h1": ["78px", { lineHeight: "0.98", letterSpacing: "-0.02em", fontWeight: "900" }],
+              "card-h3": ["30px", { lineHeight: "1.08", fontWeight: "800" }],
+              "body-base": ["18px", { lineHeight: "1.38", fontWeight: "400" }],
+              "body-intro": ["21px", { lineHeight: "1.35", fontWeight: "400" }],
+              "display-h1-mobile": ["42px", { lineHeight: "1.0", letterSpacing: "-0.01em", fontWeight: "900" }],
+              "section-h2-mobile": ["34px", { lineHeight: "1.04", fontWeight: "900" }],
+              "section-h2": ["60px", { lineHeight: "1.04", fontWeight: "900" }],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        min-height: max(884px, 100dvh);
+        background-color: #f7faf7;
+        color: #181c1b;
+        font-family: "Inter", sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      .glass-card {
+        background: rgba(255, 255, 255, 0.84);
+        backdrop-filter: blur(18px);
+        border: 1px solid #dde7da;
+      }
+
+      .organic-shadow {
+        box-shadow: 0 10px 36px -12px rgba(70, 88, 62, 0.08);
+      }
+
+      .material-symbols-outlined {
+        font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+      }
+
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+
+      .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+
+      details > summary {
+        list-style: none;
+      }
+
+      details > summary::-webkit-details-marker {
+        display: none;
+      }
+
+      .step-indicator {
+        width: 42px;
+        height: 42px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #eaf0e6;
+        color: #5e7446;
+        border-radius: 50%;
+        font-weight: 900;
+      }
+
+      .active-scale:active {
+        transform: scale(0.95);
+        transition: transform 0.2s;
+      }
+
+      .hero-image-container {
+        z-index: 10;
+      }
+    </style>
   </head>
-  <body>
-    <main id="top">
-      <section class="hero-section">
-        <div class="hero-copy">
-          <div class="eyebrow">Старт 1 июля · три месяца сопровождения</div>
-          <h1>Индивидуальное сопровождение</h1>
-          <p>
-            Три месяца рядом с Мариной и куратором, чтобы питание, движение,
-            сон и забота о себе стали обычным ритмом жизни.
+  <body class="overflow-x-hidden">
+    <header class="fixed top-0 w-full z-50 bg-surface/40 backdrop-blur-md flex justify-between items-center h-16 px-gutter-mobile">
+      <div class="flex items-center gap-2">
+        <span class="material-symbols-outlined text-primary text-xl">spa</span>
+        <h1 class="font-label-eyebrow tracking-widest text-primary uppercase" style="font-size: 15px;">Формула здоровья</h1>
+      </div>
+      <a class="material-symbols-outlined text-on-surface-variant hover:opacity-80 transition-opacity active-scale text-2xl" href="#price">menu</a>
+    </header>
+
+    <main class="pb-24">
+      <section class="relative overflow-hidden min-h-[90vh] flex flex-col">
+        <div class="relative w-full h-[600px] hero-image-container">
+          <img
+            alt="Марина Сикальчук"
+            class="w-full h-full object-cover"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfbyPIOCuet5dPoqZIq4SYW0V7Rs78F6ZYflibUMog-jZTCqFk_PWuiJKmVYwkBDiVrS-yrJPcOKKaVtojRtngTNh-pVaoO3MeuDK2EzpUCYa2Fp7ab9iB3_i8GoN_77D7fbL_cEdyNOUF9UIg8v6J960tuiQdl6mJtrzdhNsT98zzJO6oVG61_qrFjUtdjjD4PkN3AHkb1wWFROIl7-fh5zo2BULi8HQ02rtjdT3Xl4_TJxRRuwcmMaMnFiLrMHjFx1WcED0wrRQmBn4"
+          />
+        </div>
+        <div class="relative z-20 px-gutter-mobile -mt-10 bg-surface pt-12 pb-10 rounded-t-[40px] shadow-[0_-20px_40px_rgba(0,0,0,0.05)]">
+          <h1 class="font-section-h2-mobile text-section-h2-mobile text-text-primary mb-2">Персональная программа</h1>
+          <p class="font-body-intro text-body-intro text-text-muted mb-8 leading-relaxed">
+            Сформируем за 3 месяца новые привычки, с помощью авторской методики с мягким контролем и обратной связью.
+            <span class="font-bold text-primary">Без жёстких запретов и откатов.</span>
           </p>
-          <div class="hero-actions">
-            <a class="primary-btn" href="#booking">Оставить заявку</a>
-            <a class="secondary-btn" href="#why">Почему это сработает</a>
-          </div>
-          <div class="hero-proof">
-            <span>ежедневная поддержка</span>
-            <span>меню и рецепты</span>
-            <span>разбор анализов</span>
-          </div>
-          <div class="hero-metrics" aria-label="Коротко о формате">
-            <div><b>3</b><span>месяца</span></div>
-            <div><b>1:1</b><span>стратегия</span></div>
-            <div><b>ежедневно</b><span>чат с куратором</span></div>
-          </div>
-        </div>
-
-        <div class="hero-media" aria-label="Марина с тарелкой сбалансированного питания">
-          <img src="assets/marina-food.jpg" alt="Марина с полезным блюдом" />
-          <div class="hero-card">
-            <b>Формула здоровья</b>
-            <span>не марафон, а 3 месяца мягкой перестройки привычек</span>
-          </div>
+          <a class="w-full bg-primary-container text-on-primary h-[64px] rounded-2xl font-[880] text-lg active-scale shadow-lg shadow-primary-container/20 flex items-center justify-center" href="#booking">
+            Начать трансформацию
+          </a>
         </div>
       </section>
 
-      <section class="belief-section" id="why">
-        <div class="belief-card">
-          <span class="eyebrow">Главная идея</span>
-          <h2>Вы срывались не потому, что у вас нет силы воли</h2>
-          <div class="motivation-visual" aria-label="Почему марафоны часто не держатся">
-            <div class="curve-card weak">
-              <span>марафон</span>
-              <div class="curve-line"></div>
-              <b>быстрый старт</b>
-              <small>мотивация падает</small>
+      <section class="px-gutter-mobile py-section-gap-mobile bg-surface">
+        <h3 class="font-section-h2-mobile text-section-h2-mobile text-text-primary mb-8">Живые результаты</h3>
+        <div class="grid gap-6">
+          <article class="bg-card-surface p-card-padding-sm rounded-[30px] border border-border-soft organic-shadow transition-all duration-700 ease-out">
+            <div class="aspect-video mb-4 overflow-hidden rounded-xl">
+              <img alt="Похудение" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCyoEY6HKfphSp_7u8f4jjQ91t7JohdVFfaI-hadXnU90_SzrV3wmPjDGBHZl1_3N6NNQf0nNvRXvi_CTcRwUI2Xx0oLGeAodM4Xjy7heaXKjUvDlSMnzWg1yFfxyh1ySlazVejcGmcYGrT6NRwrX1mqhE_WSXpMvzyxDRaesSOvzvQqF5-ezON6z8WyzaDfWfDjpyTRVgZxtcdfsT5AmaXQUUqsZYwXSmzfPlhCqQ4h5pU6_c_DinXjIpaJQ4uUbx_Mp3iyJdy5HJz" />
             </div>
-            <div class="curve-card strong">
-              <span>сопровождение</span>
-              <div class="curve-line"></div>
-              <b>новый ритм</b>
-              <small>поддержка держит темп</small>
+            <h4 class="font-card-h3 text-xl mb-2 text-primary">Похудение</h4>
+            <p class="text-text-muted text-sm leading-relaxed">Минус 20 кг за 3 месяца и полное отсутствие срывов. Мы не просто считали калории, а выстроили систему, которая стала частью жизни.</p>
+          </article>
+
+          <article class="bg-card-surface p-card-padding-sm rounded-[30px] border border-border-soft organic-shadow transition-all duration-700 ease-out">
+            <div class="aspect-video mb-4 overflow-hidden rounded-xl">
+              <img alt="Энергия и ферритин" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGoApuWpKptnHLlxMx912ce8CfT3u_3yzHpFkpi33LrE41elQ4isID4XSt8cZPhtLXN6CvXSsw_rkul-Jl0pQnGldiN1ipGrpdpV4RPVNoJ0TfB1dhaiwpEh05YGWfGqqUdmRZVPMvrPS6q0ihYvpvRp6eDcthfeV7rC7yiClffvwLiIRt8v5XrJEaSV4Jikh6_3APnrOluhIXFFp3obBRZZ4G_AnpYTUmzIxCu131vdAFfeVMFIMmQkE4Ce3j977M9qV_OdvB7KAs" />
+            </div>
+            <h4 class="font-card-h3 text-xl mb-2 text-primary">Энергия и ферритин</h4>
+            <p class="text-text-muted text-sm leading-relaxed">Подняли ферритин с 12 до 65 нг/мл. Теперь энергии хватает на весь день, а утренняя разбитость осталась в прошлом.</p>
+          </article>
+
+          <article class="bg-card-surface p-card-padding-sm rounded-[30px] border border-border-soft organic-shadow transition-all duration-700 ease-out">
+            <div class="aspect-video mb-4 overflow-hidden rounded-xl">
+              <img alt="ЖКТ и лёгкость" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLCiGIOzvkQ4nmLT8d3e_wXZ3IAs9nje6inG5676X7C5aRmsugJPqCX4gxEJX-Q0y_JbcTA0K0zATtbqUl1O-9hCKQM3bv2LINsbuA0PJr4LWNOeUlJPfT12J_xoaeXUMWkMUu7r10ajd6Wv-OR2hJmwcQ_ESNZrWbImccCnYRS2XpemwPCybx4xyqvh6dSWfxssagzw1-WNMmVV03VG9oGFHS0NVRqg7M0K3cf26aMF5WK9zXIoEGxxW5l3D-qQUW4eH1ISGvoMjE" />
+            </div>
+            <h4 class="font-card-h3 text-xl mb-2 text-primary">ЖКТ и лёгкость</h4>
+            <p class="text-text-muted text-sm leading-relaxed">Забыла про вздутие и тяжесть после еды. Наладили стул и подобрали рацион, который не вызывает дискомфорта.</p>
+          </article>
+
+          <article class="bg-card-surface p-card-padding-sm rounded-[30px] border border-border-soft organic-shadow transition-all duration-700 ease-out">
+            <div class="aspect-video mb-4 overflow-hidden rounded-xl">
+              <img alt="Кожа" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDay1zCrS_S6-eHJ1eHD1pN7fzDq5_MHywDXA2FEiWbZHhNK2f_7X-zzmdwS0dvLy6u33eqSlvJhzkgRiby5FjNb-r9l-crlxyDtz0GH5LEx5Fj41OS-i7lJ6i7bdvfZ1Ba7VEQCSha6erM7m0djn6RjQ_ALv1BDWdbwLlP4UkZZCzVGJROf3maQlhwaid94dkNvwoAAjg5DaCs7wFApFN_UafONa6UQGRbZtyM0Dmkgsi3uFY539dMdLLlipEP6kXiortWddd69L4P" />
+            </div>
+            <h4 class="font-card-h3 text-xl mb-2 text-primary">Кожа</h4>
+            <p class="text-text-muted text-sm leading-relaxed">Чистая кожа через 2 месяца работы с дефицитами и питанием. Прошли воспаления, которые не поддавались внешнему уходу.</p>
+          </article>
+
+          <article class="bg-card-surface p-card-padding-sm rounded-[30px] border border-border-soft organic-shadow transition-all duration-700 ease-out">
+            <div class="aspect-video mb-4 overflow-hidden rounded-xl">
+              <img alt="Отёки и тяжесть" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBipl6mC_tjz8H5cQHzxdFRgCfUQkrAdu0BVO8x3lOsIlL2wN1B-lNYRCxEtdvipT5dmX6A973NB1R2Z_N-cH2agEFkJciyDE8_MfEQZChoF1EUzkx46R1CXh5Sf_SN7-e1_Xal1bh942VX17_9yUnch-ffk6Ter9SYluLSvAYfw_IiZqYlf9kUMciA8H3Om4dRzFFwRbo9cD-g_zIwDVfIauVg_VVNGxGtYIy-L1VPwC81EjBe4_W79YiWJ8fYA_eolIWhKubl4w-k" />
+            </div>
+            <h4 class="font-card-h3 text-xl mb-2 text-primary">Отёки и тяжесть</h4>
+            <p class="text-text-muted text-sm leading-relaxed">Уменьшение застойных явлений, возвращение лёгкости в теле и чёткости контуров за счёт работы с лимфодренажем и питанием.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="bg-surface-container-low px-gutter-mobile py-section-gap-mobile">
+        <h3 class="font-section-h2-mobile text-section-h2-mobile text-text-primary mb-8">Почему это сработает</h3>
+        <div class="grid gap-4">
+          <article class="bg-card-surface p-card-padding-sm rounded-[30px] border border-border-soft organic-shadow">
+            <div class="step-indicator mb-4 text-sm">01</div>
+            <h4 class="font-card-h3 text-xl mb-2">Комплексный подход</h4>
+            <p class="text-text-muted text-sm leading-relaxed">Мы не лечим симптомы, а работаем с фундаментом: от ЖКТ до качества сна.</p>
+          </article>
+          <article class="bg-card-surface p-card-padding-sm rounded-[30px] border border-border-soft organic-shadow">
+            <div class="step-indicator mb-4 text-sm">02</div>
+            <h4 class="font-card-h3 text-xl mb-2">Индивидуальный подход</h4>
+            <p class="text-text-muted text-sm leading-relaxed">Адаптация рациона под ваши вкусы, образ жизни, цели и анализы.</p>
+          </article>
+          <article class="bg-card-surface p-card-padding-sm rounded-[30px] border border-border-soft organic-shadow">
+            <div class="step-indicator mb-4 text-sm">03</div>
+            <h4 class="font-card-h3 text-xl mb-2">Индивидуальная стратегия</h4>
+            <p class="text-text-muted text-sm leading-relaxed">Пошаговый план внедрения привычек без стресса для психики и организма.</p>
+          </article>
+          <article class="bg-card-surface p-card-padding-sm rounded-[30px] border border-border-soft organic-shadow">
+            <div class="step-indicator mb-4 text-sm">04</div>
+            <h4 class="font-card-h3 text-xl mb-2">Врачи DocMed</h4>
+            <p class="text-text-muted text-sm leading-relaxed">Доказательная медицина как основа всех рекомендаций.</p>
+          </article>
+          <article class="bg-card-surface p-card-padding-sm rounded-[30px] border border-border-soft organic-shadow">
+            <div class="step-indicator mb-4 text-sm">05</div>
+            <h4 class="font-card-h3 text-xl mb-2">Образовательный блок</h4>
+            <p class="text-text-muted text-sm leading-relaxed">Вы научитесь понимать свой организм и выбирать лучшее самостоятельно после программы.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="px-gutter-mobile py-section-gap-mobile">
+        <h3 class="font-section-h2-mobile text-section-h2-mobile text-text-primary mb-8">Для кого эта программа</h3>
+        <div class="space-y-4">
+          <div class="flex items-center gap-4 p-5 bg-white rounded-2xl border-l-4 border-primary organic-shadow">
+            <span class="material-symbols-outlined text-primary">weight</span>
+            <span class="font-body-base">Вес стоит на месте, несмотря на усилия</span>
+          </div>
+          <div class="flex items-center gap-4 p-5 bg-white rounded-2xl border-l-4 border-primary organic-shadow">
+            <span class="material-symbols-outlined text-primary">water_drop</span>
+            <span class="font-body-base">Беспокоят отёки и чувство тяжести</span>
+          </div>
+          <div class="flex items-center gap-4 p-5 bg-white rounded-2xl border-l-4 border-primary organic-shadow">
+            <span class="material-symbols-outlined text-primary">icecream</span>
+            <span class="font-body-base">Постоянная тяга к сладкому и перекусам</span>
+          </div>
+          <div class="flex items-center gap-4 p-5 bg-white rounded-2xl border-l-4 border-primary organic-shadow">
+            <span class="material-symbols-outlined text-primary">feed</span>
+            <span class="font-body-base">Проблемы с ЖКТ и дискомфорт после еды</span>
+          </div>
+          <div class="flex items-center gap-4 p-5 bg-white rounded-2xl border-l-4 border-primary organic-shadow">
+            <span class="material-symbols-outlined text-primary">battery_low</span>
+            <span class="font-body-base">Усталость уже с самого утра</span>
+          </div>
+          <div class="flex items-center gap-4 p-5 bg-white rounded-2xl border-l-4 border-primary organic-shadow">
+            <span class="material-symbols-outlined text-primary">account_tree</span>
+            <span class="font-body-base">Нужна четкая система, а не хаос и сливы</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-surface-container-low px-gutter-mobile py-section-gap-mobile">
+        <h3 class="font-section-h2-mobile text-section-h2-mobile text-text-primary mb-4">Что внутри программы</h3>
+        <p class="text-text-muted text-sm mb-8 leading-relaxed">
+          Это не папка с уроками и не общий рацион для всех. У вас будет личный маршрут, материалы по неделям, задания, обратная связь и всё, что помогает внедрять изменения без хаоса.
+        </p>
+        <div class="grid grid-cols-2 gap-4">
+          <article class="col-span-2 bg-white p-6 rounded-[30px] border border-border-soft organic-shadow">
+            <div class="flex justify-between items-start mb-4">
+              <span class="material-symbols-outlined text-primary text-3xl">assignment</span>
+              <span class="bg-primary/10 text-primary text-[10px] px-3 py-1 rounded-full font-bold uppercase">Не шаблон, а маршрут под вашу точку старта</span>
+            </div>
+            <h4 class="font-card-h3 text-xl mb-3">Персональная программа</h4>
+            <p class="text-text-muted text-sm leading-relaxed">На старте вы заполняете анкету, загружаете анализы, дневник питания и замеры. На основе этих данных команда формирует ваши первые фокусы: что сейчас в приоритете, что отслеживать, какие привычки внедрять и где нужна зона врача.</p>
+          </article>
+
+          <article class="bg-white p-5 rounded-[30px] border border-border-soft organic-shadow">
+            <span class="material-symbols-outlined text-primary mb-3">dashboard</span>
+            <h4 class="font-card-h3 text-[15px] mb-2 leading-tight">Личный кабинет</h4>
+            <p class="text-text-muted text-[12px] leading-tight">Уроки, PDF, чек-листы и задания хранятся в одном месте.</p>
+          </article>
+          <article class="bg-white p-5 rounded-[30px] border border-border-soft organic-shadow">
+            <span class="material-symbols-outlined text-primary mb-3">auto_stories</span>
+            <h4 class="font-card-h3 text-[15px] mb-2 leading-tight">Материалы по неделям</h4>
+            <p class="text-text-muted text-[12px] leading-tight">Каждую неделю — новый блок: гайды, задания и эфиры.</p>
+          </article>
+          <article class="bg-white p-5 rounded-[30px] border border-border-soft organic-shadow">
+            <span class="material-symbols-outlined text-primary mb-3">forum</span>
+            <h4 class="font-card-h3 text-[15px] mb-2 leading-tight">Кураторская поддержка</h4>
+            <p class="text-text-muted text-[12px] leading-tight">Помощь с тарелками, дневником и сложностями внедрения.</p>
+          </article>
+          <article class="bg-white p-5 rounded-[30px] border border-border-soft organic-shadow">
+            <span class="material-symbols-outlined text-primary mb-3">restaurant</span>
+            <h4 class="font-card-h3 text-[15px] mb-2 leading-tight">Питание без запретов</h4>
+            <p class="text-text-muted text-[12px] leading-tight">Рацион через насыщение и адаптацию под вашу жизнь.</p>
+          </article>
+          <article class="bg-white p-5 rounded-[30px] border border-border-soft organic-shadow">
+            <span class="material-symbols-outlined text-primary mb-3">spa</span>
+            <h4 class="font-card-h3 text-[15px] mb-2 leading-tight">ЖКТ, сон и энергия</h4>
+            <p class="text-text-muted text-[12px] leading-tight">Слои, влияющие на аппетит, тягу к сладкому и силы.</p>
+          </article>
+          <article class="bg-white p-5 rounded-[30px] border border-border-soft organic-shadow">
+            <span class="material-symbols-outlined text-primary mb-3">biotech</span>
+            <h4 class="font-card-h3 text-[15px] mb-2 leading-tight">Анализы и дефициты</h4>
+            <p class="text-text-muted text-[12px] leading-tight">Разбираем показатели, которые важно учитывать для здоровья.</p>
+          </article>
+          <article class="col-span-2 bg-[#3F5630] p-6 rounded-[30px] organic-shadow text-white">
+            <div class="flex items-center gap-3 mb-3">
+              <span class="material-symbols-outlined text-white text-3xl">task_alt</span>
+              <h4 class="font-card-h3 text-xl">Выход с системой</h4>
+            </div>
+            <p class="opacity-90 text-sm leading-relaxed">Финальная цель — не просто пройти курс, а выйти с понятным планом, рабочими привычками и стратегией, к которой можно возвращаться после программы.</p>
+          </article>
+        </div>
+        <p class="mt-8 text-center text-[13px] text-text-muted font-medium px-4">Все материалы открываются постепенно, чтобы вы не тонули в информации, а внедряли изменения шаг за шагом.</p>
+      </section>
+
+      <section class="bg-surface-container-low px-gutter-mobile py-section-gap-mobile" id="roadmap">
+        <div class="mb-10">
+          <h2 class="font-section-h2-mobile text-section-h2-mobile text-text-primary mb-4">12 недель — путь от хаоса к системе</h2>
+          <p class="text-text-muted text-sm leading-relaxed">Каждая неделя решает конкретную задачу. Материалы открываются постепенно, чтобы вы не тонули в информации, а внедряли изменения шаг за шагом.</p>
+        </div>
+        <div class="bg-white p-6 rounded-[30px] border border-border-soft organic-shadow mb-8 relative overflow-hidden">
+          <div class="flex items-start gap-4">
+            <div class="bg-primary/10 p-3 rounded-2xl">
+              <span class="material-symbols-outlined text-primary text-2xl">analytics</span>
+            </div>
+            <div>
+              <h4 class="font-card-h3 text-xl mb-2">Перед стартом: диагностика и персональная сборка</h4>
+              <p class="text-text-muted text-sm leading-relaxed">До первой недели вы заполняете анкету, загружаете анализы, дневник питания и замеры. На основе этих данных команда собирает вашу персональную программу и первые фокусы.</p>
             </div>
           </div>
         </div>
-        <div class="mini-grid">
-          <article>
-            <strong>1</strong>
-            <h3>Сначала убираем хаос</h3>
-            <p>Питание, сон, вода, белок, первые шаги.</p>
-          </article>
-          <article>
-            <strong>2</strong>
-            <h3>Потом закрепляем ритм</h3>
-            <p>Куратор помогает не бросить после первого азарта.</p>
-          </article>
-          <article>
-            <strong>3</strong>
-            <h3>В конце делаем систему</h3>
-            <p>Понятный план, который можно продолжать самой.</p>
-          </article>
-        </div>
-      </section>
 
-      <section class="problem-section">
-        <div class="section-head">
-          <span class="eyebrow">Для кого</span>
-          <h2>Если хочется легче тело, спокойнее аппетит и больше энергии</h2>
-        </div>
-        <div class="problem-strip">
-          <article>
-            <div class="visual-icon weight-icon"></div>
-            <h3>Вес и отёки</h3>
-            <p>Тело “тяжёлое”, вес стоит, диеты надоели.</p>
-          </article>
-          <article>
-            <div class="visual-icon craving-icon"></div>
-            <h3>Сладкое и срывы</h3>
-            <p>Днём держитесь, вечером тянет на перекусы.</p>
-          </article>
-          <article>
-            <div class="visual-icon gut-icon"></div>
-            <h3>ЖКТ и кожа</h3>
-            <p>Вздутие, стул, акне, волосы и ногти.</p>
-          </article>
-          <article>
-            <div class="visual-icon energy-icon"></div>
-            <h3>Усталость</h3>
-            <p>Мало ресурса, сон и движение всё время “потом”.</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="method-section">
-        <div class="image-panel">
-          <img src="assets/marina-portrait.jpg" alt="Марина Сикальчук" />
-        </div>
-        <div class="method-copy">
-          <span class="eyebrow">Как устроена программа</span>
-          <h2>Мы не даём вам “идеальный план” и не оставляем с ним одну</h2>
-          <div class="support-loop" aria-label="Цикл сопровождения">
-            <div class="loop-node">анкета</div>
-            <div class="loop-node">стратегия</div>
-            <div class="loop-node">чат</div>
-            <div class="loop-node">тарелки</div>
-            <div class="loop-node">коррекция</div>
-          </div>
-          <div class="phone-mock">
-            <div class="phone-head">чат с куратором</div>
-            <div class="message incoming">Как собрать ужин, если я не дома?</div>
-            <div class="message outgoing">Покажите меню, выберем спокойный вариант.</div>
-            <div class="plate-card">
-              <span>тарелка</span>
-              <div class="plate-visual">
-                <i></i><i></i><i></i>
+        <div class="space-y-4">
+          <details class="group bg-white rounded-2xl border border-border-soft organic-shadow overflow-hidden" open>
+            <summary class="flex items-center justify-between p-5 cursor-pointer">
+              <div class="flex items-center gap-4">
+                <div class="step-indicator group-open:bg-primary group-open:text-white transition-colors">1</div>
+                <div class="flex flex-col">
+                  <span class="font-bold text-sm uppercase tracking-wide">Неделя 1 — старт питания</span>
+                  <span class="text-[12px] text-text-muted truncate max-w-[180px]">Здоровая тарелка, ритм питания, белок, клетчатка и вода.</span>
+                </div>
+              </div>
+              <span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+            </summary>
+            <div class="px-5 pb-5 pt-2 border-t border-border-soft/50 space-y-4">
+              <div>
+                <h5 class="text-xs font-black text-primary uppercase mb-1 tracking-widest">Что делаем</h5>
+                <p class="text-text-muted text-sm">Выстраиваем базу, которая убирает чувство голода и тягу к перекусам через баланс белков и клетчатки.</p>
+              </div>
+              <div class="flex flex-wrap gap-2">
+                <span class="bg-sage-accent px-3 py-1 rounded-full text-[10px] font-bold uppercase text-primary">питание</span>
+                <span class="bg-sage-accent px-3 py-1 rounded-full text-[10px] font-bold uppercase text-primary">тарелка</span>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="program-section" id="program">
-        <div class="section-head center">
-          <span class="eyebrow">Что внутри</span>
-          <h2>Всё, что помогает встроить здоровье в обычную жизнь</h2>
-        </div>
-        <div class="program-grid">
-          <article>
-            <span class="tile-mark">01</span>
-            <h3>Меню и рецепты</h3>
-            <p>блюда · заготовки · работа</p>
-          </article>
-          <article>
-            <span class="tile-mark">02</span>
-            <h3>Питание без запретов</h3>
-            <p>белок · клетчатка · кафе</p>
-          </article>
-          <article>
-            <span class="tile-mark">03</span>
-            <h3>ЖКТ и микробиота</h3>
-            <p>реакции · вздутие · стул</p>
-          </article>
-          <article>
-            <span class="tile-mark">04</span>
-            <h3>Сон и энергия</h3>
-            <p>сон · ресурс · привычки</p>
-          </article>
-          <article>
-            <span class="tile-mark">05</span>
-            <h3>Дефициты и анализы</h3>
-            <p>железо · витамин D · БАДы</p>
-          </article>
-          <article>
-            <span class="tile-mark">06</span>
-            <h3>Эксперты проекта</h3>
-            <p>гастроэнтеролог · эндокринолог</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="weeks-section" id="weeks">
-        <div class="section-head">
-          <span class="eyebrow">Путь на три месяца</span>
-          <h2>Недели можно раскрыть и посмотреть подробнее</h2>
-          <p>Нажмите на любую строку — внутри коротко написано, что будет в фокусе.</p>
-        </div>
-        <div class="month-map" aria-label="Визуальная карта трёх месяцев">
-          <article>
-            <span>месяц 1</span>
-            <b>база</b>
-            <small>тарелка · ЖКТ · режим</small>
-          </article>
-          <article>
-            <span>месяц 2</span>
-            <b>тело</b>
-            <small>сон · энергия · дефициты</small>
-          </article>
-          <article>
-            <span>месяц 3</span>
-            <b>ритм</b>
-            <small>движение · баланс · выход</small>
-          </article>
-        </div>
-        <div class="weeks-list">
-          <details open>
-            <summary><span>1</span> Старт и база питания <i></i></summary>
-            <p>Убираем хаос, собираем тарелку, белок, клетчатку и первый понятный ритм.</p>
           </details>
-          <details>
-            <summary><span>2</span> Закрепление питания <i></i></summary>
-            <p>Голод, насыщение, полезные продукты, причины плато веса и первые корректировки.</p>
-          </details>
-          <details>
-            <summary><span>3</span> ЖКТ и самочувствие <i></i></summary>
-            <p>Вздутие, запоры, продукты-триггеры, реакции организма и эфир гастроэнтеролога.</p>
-          </details>
-          <details>
-            <summary><span>4</span> Реальная жизнь <i></i></summary>
-            <p>Кафе, работа, поездки, перекусы, заготовки и питание без постоянного контроля.</p>
-          </details>
-          <details>
-            <summary><span>5</span> Микробиота и энергия <i></i></summary>
-            <p>Питание для ЖКТ, клетчатка, воспаление, хроническая усталость и ресурс.</p>
-          </details>
-          <details>
-            <summary><span>6</span> Сон и восстановление <i></i></summary>
-            <p>Сон, вечерние привычки, аппетит, энергия и маленькие действия для восстановления.</p>
-          </details>
-          <details>
-            <summary><span>7</span> Тяга к сладкому <i></i></summary>
-            <p>Пищевое поведение, эмоциональный голод, переедание и стратегии без запретов.</p>
-          </details>
-          <details>
-            <summary><span>8</span> Дефициты и витамины <i></i></summary>
-            <p>Симптомы дефицитов, железо, витамин D, анализы и добавки по приоритетам.</p>
-          </details>
-          <details>
-            <summary><span>9</span> Движение и тело <i></i></summary>
-            <p>Шаги, NEAT, домашние тренировки, осанка и движение без перегруза.</p>
-          </details>
-          <details>
-            <summary><span>10</span> Баланс без откатов <i></i></summary>
-            <p>Праздники, поездки, “неидеальные” дни и питание без чувства вины.</p>
-          </details>
-          <details>
-            <summary><span>11</span> Пересборка под себя <i></i></summary>
-            <p>Личные триггеры, рабочие привычки, реакции организма и гибкий план.</p>
-          </details>
-          <details>
-            <summary><span>12</span> Закрепление и выход <i></i></summary>
-            <p>Финальный план на 3–6 месяцев, правила поддержки и спокойный выход из программы.</p>
-          </details>
-        </div>
-      </section>
-
-      <section class="support-section">
-        <div class="section-head center">
-          <span class="eyebrow">Кто рядом</span>
-          <h2>Вы не остаетесь один на один с планом</h2>
-        </div>
-        <div class="support-grid">
-          <article class="support-card main-person">
-            <img src="assets/marina-portrait.jpg" alt="Марина Сикальчук" />
-            <div>
-              <h3>Марина Сикальчук</h3>
-              <p>стратегия · контроль · обратная связь</p>
+          <details class="group bg-white rounded-2xl border border-border-soft organic-shadow overflow-hidden">
+            <summary class="flex items-center justify-between p-5 cursor-pointer">
+              <div class="flex items-center gap-4">
+                <div class="step-indicator group-open:bg-primary group-open:text-white transition-colors">2</div>
+                <div class="flex flex-col">
+                  <span class="font-bold text-sm uppercase tracking-wide">Неделя 2 — углеводы и энергия</span>
+                  <span class="text-[12px] text-text-muted truncate max-w-[180px]">Сложные углеводы, работа с сахаром и инсулином.</span>
+                </div>
+              </div>
+              <span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+            </summary>
+            <div class="px-5 pb-5 pt-2 border-t border-border-soft/50 space-y-4">
+              <h5 class="text-xs font-black text-primary uppercase mb-1 tracking-widest">Что делаем</h5>
+              <p class="text-text-muted text-sm">Учимся выбирать правильное топливо для мозга и тела, чтобы избежать дневных провалов энергии.</p>
             </div>
-          </article>
-          <article class="support-card">
-            <span class="role-badge">чат</span>
-            <h3>Куратор</h3>
-            <p>тарелки · вопросы · поддержка</p>
-          </article>
-          <article class="support-card">
-            <span class="role-badge">эксперты</span>
-            <h3>Врачи проекта</h3>
-            <p>ЖКТ · гормоны · дефициты</p>
-          </article>
+          </details>
+          <details class="group bg-white rounded-2xl border border-border-soft organic-shadow overflow-hidden">
+            <summary class="flex items-center justify-between p-5 cursor-pointer">
+              <div class="flex items-center gap-4">
+                <div class="step-indicator group-open:bg-primary group-open:text-white transition-colors">3</div>
+                <div class="flex flex-col">
+                  <span class="font-bold text-sm uppercase tracking-wide">Неделя 3 — ЖКТ: усвоение</span>
+                  <span class="text-[12px] text-text-muted truncate max-w-[180px]">Кислотность, ферменты и желчеотток.</span>
+                </div>
+              </div>
+              <span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+            </summary>
+            <div class="px-5 pb-5 pt-2 border-t border-border-soft/50 space-y-4">
+              <h5 class="text-xs font-black text-primary uppercase mb-1 tracking-widest">Что делаем</h5>
+              <p class="text-text-muted text-sm">Помогаем организму реально забирать пользу из еды. Работаем с тяжестью и вздутием.</p>
+            </div>
+          </details>
+          <details class="group bg-white rounded-2xl border border-border-soft organic-shadow overflow-hidden">
+            <summary class="flex items-center justify-between p-5 cursor-pointer">
+              <div class="flex items-center gap-4">
+                <div class="step-indicator group-open:bg-primary group-open:text-white transition-colors">4</div>
+                <div class="flex flex-col">
+                  <span class="font-bold text-sm uppercase tracking-wide">Неделя 4 — микробиом</span>
+                  <span class="text-[12px] text-text-muted truncate max-w-[180px]">Пробиотики, пребиотики и чистая кожа.</span>
+                </div>
+              </div>
+              <span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+            </summary>
+            <div class="px-5 pb-5 pt-2 border-t border-border-soft/50 space-y-4">
+              <h5 class="text-xs font-black text-primary uppercase mb-1 tracking-widest">Что делаем</h5>
+              <p class="text-text-muted text-sm">Кормим полезные бактерии, чтобы снизить воспаления и тягу к сладкому на уровне биологии.</p>
+            </div>
+          </details>
+          <details class="group bg-white rounded-2xl border border-border-soft organic-shadow overflow-hidden">
+            <summary class="flex items-center justify-between p-5 cursor-pointer">
+              <div class="flex items-center gap-4">
+                <div class="step-indicator group-open:bg-primary group-open:text-white transition-colors">5</div>
+                <div class="flex flex-col">
+                  <span class="font-bold text-sm uppercase tracking-wide">Неделя 5 — стресс и кортизол</span>
+                  <span class="text-[12px] text-text-muted truncate max-w-[180px]">Влияние нервной системы на метаболизм и отеки.</span>
+                </div>
+              </div>
+              <span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+            </summary>
+            <div class="px-5 pb-5 pt-2 border-t border-border-soft/50 space-y-4">
+              <h5 class="text-xs font-black text-primary uppercase mb-1 tracking-widest">Что делаем</h5>
+              <p class="text-text-muted text-sm">Разбираемся, почему стресс заставляет тело «копить» жир и воду, и как это остановить.</p>
+            </div>
+          </details>
+          <details class="group bg-white rounded-2xl border border-border-soft organic-shadow overflow-hidden">
+            <summary class="flex items-center justify-between p-5 cursor-pointer">
+              <div class="flex items-center gap-4">
+                <div class="step-indicator group-open:bg-primary group-open:text-white transition-colors">6</div>
+                <div class="flex flex-col">
+                  <span class="font-bold text-sm uppercase tracking-wide">Неделя 6 — детокс и лимфа</span>
+                  <span class="text-[12px] text-text-muted truncate max-w-[180px]">Работа печени и лимфодренажные привычки.</span>
+                </div>
+              </div>
+              <span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+            </summary>
+            <div class="px-5 pb-5 pt-2 border-t border-border-soft/50 space-y-4">
+              <h5 class="text-xs font-black text-primary uppercase mb-1 tracking-widest">Что делаем</h5>
+              <p class="text-text-muted text-sm">Запускаем процессы очищения, убираем отечность и возвращаем лицу свежий вид.</p>
+            </div>
+          </details>
+          <details class="group bg-white rounded-2xl border border-border-soft organic-shadow overflow-hidden">
+            <summary class="flex items-center justify-between p-5 cursor-pointer">
+              <div class="flex items-center gap-4">
+                <div class="step-indicator group-open:bg-primary group-open:text-white transition-colors">7</div>
+                <div class="flex flex-col">
+                  <span class="font-bold text-sm uppercase tracking-wide">Неделя 7 — сон и гормоны</span>
+                  <span class="text-[12px] text-text-muted truncate max-w-[180px]">Мелатонин, ритмы и ночное жиросжигание.</span>
+                </div>
+              </div>
+              <span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+            </summary>
+            <div class="px-5 pb-5 pt-2 border-t border-border-soft/50 space-y-4">
+              <h5 class="text-xs font-black text-primary uppercase mb-1 tracking-widest">Что делаем</h5>
+              <p class="text-text-muted text-sm">Настраиваем сон так, чтобы худеть и восстанавливаться, пока вы спите.</p>
+            </div>
+          </details>
+          <details class="group bg-white rounded-2xl border border-border-soft organic-shadow overflow-hidden">
+            <summary class="flex items-center justify-between p-5 cursor-pointer">
+              <div class="flex items-center gap-4">
+                <div class="step-indicator group-open:bg-primary group-open:text-white transition-colors">8</div>
+                <div class="flex flex-col">
+                  <span class="font-bold text-sm uppercase tracking-wide">Неделя 8 — дефициты</span>
+                  <span class="text-[12px] text-text-muted truncate max-w-[180px]">Железо, витамины и восполнение ресурсов.</span>
+                </div>
+              </div>
+              <span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+            </summary>
+            <div class="px-5 pb-5 pt-2 border-t border-border-soft/50 space-y-4">
+              <h5 class="text-xs font-black text-primary uppercase mb-1 tracking-widest">Что делаем</h5>
+              <p class="text-text-muted text-sm">На основе ваших анализов корректируем прием нутрицевтиков, чтобы закрыть дыры в ресурсе.</p>
+            </div>
+          </details>
+          <details class="group bg-white rounded-2xl border border-border-soft organic-shadow overflow-hidden">
+            <summary class="flex items-center justify-between p-5 cursor-pointer">
+              <div class="flex items-center gap-4">
+                <div class="step-indicator group-open:bg-primary group-open:text-white transition-colors">9</div>
+                <div class="flex flex-col">
+                  <span class="font-bold text-sm uppercase tracking-wide">Неделя 9 — гибкое питание</span>
+                  <span class="text-[12px] text-text-muted truncate max-w-[180px]">Рестораны, поездки и как не срываться.</span>
+                </div>
+              </div>
+              <span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+            </summary>
+            <div class="px-5 pb-5 pt-2 border-t border-border-soft/50 space-y-4">
+              <h5 class="text-xs font-black text-primary uppercase mb-1 tracking-widest">Что делаем</h5>
+              <p class="text-text-muted text-sm">Адаптируем систему под реальную жизнь с праздниками и кафе, чтобы вы умели сохранять результат всегда.</p>
+            </div>
+          </details>
+          <details class="group bg-white rounded-2xl border border-border-soft organic-shadow overflow-hidden">
+            <summary class="flex items-center justify-between p-5 cursor-pointer">
+              <div class="flex items-center gap-4">
+                <div class="step-indicator group-open:bg-primary group-open:text-white transition-colors">10</div>
+                <div class="flex flex-col">
+                  <span class="font-bold text-sm uppercase tracking-wide">Неделя 10 — щитовидная железа</span>
+                  <span class="text-[12px] text-text-muted truncate max-w-[180px]">Обмен веществ и поддержка метаболизма.</span>
+                </div>
+              </div>
+              <span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+            </summary>
+            <div class="px-5 pb-5 pt-2 border-t border-border-soft/50 space-y-4">
+              <h5 class="text-xs font-black text-primary uppercase mb-1 tracking-widest">Что делаем</h5>
+              <p class="text-text-muted text-sm">Разбираем главный орган управления весом и теплом в теле, восполняем дефициты-кофакторы.</p>
+            </div>
+          </details>
+          <details class="group bg-white rounded-2xl border border-border-soft organic-shadow overflow-hidden">
+            <summary class="flex items-center justify-between p-5 cursor-pointer">
+              <div class="flex items-center gap-4">
+                <div class="step-indicator group-open:bg-primary group-open:text-white transition-colors">11</div>
+                <div class="flex flex-col">
+                  <span class="font-bold text-sm uppercase tracking-wide">Неделя 11 — осознанность</span>
+                  <span class="text-[12px] text-text-muted truncate max-w-[180px]">Психология еды, голод vs аппетит.</span>
+                </div>
+              </div>
+              <span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+            </summary>
+            <div class="px-5 pb-5 pt-2 border-t border-border-soft/50 space-y-4">
+              <h5 class="text-xs font-black text-primary uppercase mb-1 tracking-widest">Что делаем</h5>
+              <p class="text-text-muted text-sm">Финальная полировка привычек через понимание сигналов своего тела, чтобы контроль стал естественным.</p>
+            </div>
+          </details>
+          <details class="group bg-white rounded-2xl border border-border-soft organic-shadow overflow-hidden">
+            <summary class="flex items-center justify-between p-5 cursor-pointer">
+              <div class="flex items-center gap-4">
+                <div class="step-indicator group-open:bg-primary group-open:text-white transition-colors">12</div>
+                <div class="flex flex-col">
+                  <span class="font-bold text-sm uppercase tracking-wide">Неделя 12 — выход с системой</span>
+                  <span class="text-[12px] text-text-muted truncate max-w-[180px]">Ваша стратегия на год вперед.</span>
+                </div>
+              </div>
+              <span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+            </summary>
+            <div class="px-5 pb-5 pt-2 border-t border-border-soft/50 space-y-4">
+              <h5 class="text-xs font-black text-primary uppercase mb-1 tracking-widest">Результат недели</h5>
+              <p class="text-text-muted text-sm">Сборка итогового «руководства по эксплуатации» вашего организма. Вы знаете, что делать дальше самостоятельно.</p>
+            </div>
+          </details>
+        </div>
+
+        <div class="mt-8 bg-primary-container p-8 rounded-[40px] text-white organic-shadow relative overflow-hidden">
+          <h4 class="font-card-h3 text-2xl mb-4">Главное — не пройти 12 недель идеально</h4>
+          <p class="opacity-90 mb-8 text-sm leading-relaxed">Главное — собрать систему, которая выдерживает вашу реальную жизнь: работу, семью, усталость, поездки, праздники и неидеальные дни.</p>
+          <a class="w-full bg-white text-primary h-[54px] rounded-2xl font-bold active-scale flex items-center justify-center" href="#booking">Оставить заявку</a>
         </div>
       </section>
 
-      <section class="proof-section">
-        <div class="section-head">
-          <span class="eyebrow">Отзывы</span>
-          <h2>Сюда добавим живые результаты по самым горячим запросам</h2>
-        </div>
-        <div class="proof-grid">
-          <article><div class="proof-bar w1"></div><b>Вес</b><span>до/после · объёмы</span></article>
-          <article><div class="proof-bar w2"></div><b>Энергия</b><span>сон · подъём</span></article>
-          <article><div class="proof-bar w3"></div><b>ЖКТ</b><span>вздутие · стул</span></article>
-          <article><div class="proof-bar w4"></div><b>Кожа</b><span>акне · отёки</span></article>
-        </div>
+      <section class="px-gutter-mobile py-section-gap-mobile">
+        <h3 class="font-section-h2-mobile text-section-h2-mobile text-text-primary mb-8">Что вы получите</h3>
+        <ul class="space-y-6">
+          <li class="flex gap-4">
+            <div class="mt-1 w-6 h-6 flex-shrink-0 bg-primary/10 rounded-full flex items-center justify-center">
+              <span class="material-symbols-outlined text-[16px] text-primary">check_circle</span>
+            </div>
+            <p class="text-body-base">Плавное и устойчивое снижение веса без голодовок</p>
+          </li>
+          <li class="flex gap-4">
+            <div class="mt-1 w-6 h-6 flex-shrink-0 bg-primary/10 rounded-full flex items-center justify-center">
+              <span class="material-symbols-outlined text-[16px] text-primary">check_circle</span>
+            </div>
+            <p class="text-body-base">Уменьшение отёков и свежий цвет лица</p>
+          </li>
+          <li class="flex gap-4">
+            <div class="mt-1 w-6 h-6 flex-shrink-0 bg-primary/10 rounded-full flex items-center justify-center">
+              <span class="material-symbols-outlined text-[16px] text-primary">check_circle</span>
+            </div>
+            <p class="text-body-base">Стабильный аппетит и отсутствие тяги к сладкому</p>
+          </li>
+          <li class="flex gap-4">
+            <div class="mt-1 w-6 h-6 flex-shrink-0 bg-primary/10 rounded-full flex items-center justify-center">
+              <span class="material-symbols-outlined text-[16px] text-primary">check_circle</span>
+            </div>
+            <p class="text-body-base">Крепкий сон и заряд энергии на весь день</p>
+          </li>
+          <li class="flex gap-4">
+            <div class="mt-1 w-6 h-6 flex-shrink-0 bg-primary/10 rounded-full flex items-center justify-center">
+              <span class="material-symbols-outlined text-[16px] text-primary">check_circle</span>
+            </div>
+            <p class="text-body-base">Легкость в животе и налаженная работа ЖКТ</p>
+          </li>
+        </ul>
       </section>
 
       <section class="pricing-section" id="price">
@@ -406,6 +739,5 @@
         </div>
       </section>
     </main>
-
   </body>
 </html>
