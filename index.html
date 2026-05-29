@@ -786,13 +786,45 @@
           <p class="opacity-90 mb-8 leading-relaxed">
             Оставьте заявку — мы посмотрим вашу стартовую точку, запрос и подскажем, подойдёт ли вам программа сейчас.
           </p>
-          <form class="space-y-4">
-            <input class="w-full h-14 rounded-2xl border-none bg-white/10 placeholder:text-white/60 focus:ring-2 focus:ring-white/30 text-white px-6" placeholder="Ваше имя" type="text" />
-            <input class="w-full h-14 rounded-2xl border-none bg-white/10 placeholder:text-white/60 focus:ring-2 focus:ring-white/30 text-white px-6" placeholder="+7 (___) ___-__-__" type="tel" />
-            <input class="w-full h-14 rounded-2xl border-none bg-white/10 placeholder:text-white/60 focus:ring-2 focus:ring-white/30 text-white px-6" placeholder="@username в Telegram" type="text" />
-            <button class="w-full bg-white text-primary h-[60px] rounded-2xl font-[880] text-lg active-scale" type="button">
+          <form class="space-y-4 text-left" id="lead-form" novalidate>
+            <div>
+              <input
+                autocomplete="name"
+                class="w-full h-14 rounded-2xl border-none bg-white/10 placeholder:text-white/60 focus:ring-2 focus:ring-white/30 text-white px-6"
+                id="lead-name"
+                name="name"
+                placeholder="Ваше имя"
+                type="text"
+              />
+              <p class="mt-2 hidden text-sm text-white/80" data-error-for="lead-name"></p>
+            </div>
+            <div>
+              <input
+                autocomplete="tel"
+                class="w-full h-14 rounded-2xl border-none bg-white/10 placeholder:text-white/60 focus:ring-2 focus:ring-white/30 text-white px-6"
+                id="lead-phone"
+                inputmode="tel"
+                name="phone"
+                placeholder="+7 (___) ___-__-__"
+                type="tel"
+              />
+              <p class="mt-2 hidden text-sm text-white/80" data-error-for="lead-phone"></p>
+            </div>
+            <div>
+              <input
+                autocomplete="off"
+                class="w-full h-14 rounded-2xl border-none bg-white/10 placeholder:text-white/60 focus:ring-2 focus:ring-white/30 text-white px-6"
+                id="lead-telegram"
+                name="telegram"
+                placeholder="@username в Telegram"
+                type="text"
+              />
+              <p class="mt-2 hidden text-sm text-white/80" data-error-for="lead-telegram"></p>
+            </div>
+            <button class="w-full bg-white text-primary h-[60px] rounded-2xl font-[880] text-lg active-scale text-center" type="submit">
               Отправить заявку
             </button>
+            <p class="hidden rounded-2xl bg-white/10 px-4 py-3 text-center text-sm leading-relaxed text-white" id="lead-form-message"></p>
           </form>
           <p class="mt-6 text-[10px] opacity-60">Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности</p>
         </div>
@@ -825,6 +857,148 @@
           startTimer(60 * 60 * 12 + 51 * 60 + 6, display);
         }
       });
+
+      var leadFormEndpoint = "";
+
+      function showLeadError(input, message) {
+        var error = document.querySelector('[data-error-for="' + input.id + '"]');
+        input.classList.add("ring-2", "ring-white/60");
+        if (error) {
+          error.textContent = message;
+          error.classList.remove("hidden");
+        }
+      }
+
+      function clearLeadError(input) {
+        var error = document.querySelector('[data-error-for="' + input.id + '"]');
+        input.classList.remove("ring-2", "ring-white/60");
+        if (error) {
+          error.textContent = "";
+          error.classList.add("hidden");
+        }
+      }
+
+      function normalizePhone(value) {
+        var digits = value.replace(/\D/g, "");
+        if (!digits) {
+          return "";
+        }
+        if (digits.length === 10) {
+          return "+7" + digits;
+        }
+        if (digits.length === 11 && digits[0] === "8") {
+          return "+7" + digits.slice(1);
+        }
+        if (digits.length === 11 && digits[0] === "7") {
+          return "+" + digits;
+        }
+        return null;
+      }
+
+      function normalizeTelegram(value) {
+        var username = value.trim();
+        if (!username) {
+          return "";
+        }
+        username = username.replace(/^https?:\/\/t\.me\//i, "").replace(/^t\.me\//i, "");
+        username = username.replace(/^@/, "");
+        if (!/^[a-zA-Z0-9_]{5,32}$/.test(username)) {
+          return null;
+        }
+        return "@" + username;
+      }
+
+      function setLeadMessage(message, isError) {
+        var messageNode = document.querySelector("#lead-form-message");
+        if (!messageNode) {
+          return;
+        }
+        messageNode.textContent = message;
+        messageNode.classList.remove("hidden", "bg-white/10", "bg-white/20");
+        messageNode.classList.add(isError ? "bg-white/20" : "bg-white/10");
+      }
+
+      var leadForm = document.querySelector("#lead-form");
+      if (leadForm) {
+        leadForm.addEventListener("submit", async function (event) {
+          event.preventDefault();
+
+          var nameInput = document.querySelector("#lead-name");
+          var phoneInput = document.querySelector("#lead-phone");
+          var telegramInput = document.querySelector("#lead-telegram");
+          var submitButton = leadForm.querySelector('button[type="submit"]');
+          var fields = [nameInput, phoneInput, telegramInput];
+          fields.forEach(clearLeadError);
+          setLeadMessage("", false);
+          document.querySelector("#lead-form-message").classList.add("hidden");
+
+          var name = nameInput.value.trim();
+          var phone = normalizePhone(phoneInput.value);
+          var telegram = normalizeTelegram(telegramInput.value);
+          var hasError = false;
+
+          if (name.length < 2) {
+            showLeadError(nameInput, "Напишите имя: минимум 2 буквы.");
+            hasError = true;
+          }
+
+          if (phone === null) {
+            showLeadError(phoneInput, "Телефон можно ввести так: 9619969900, 89619969900 или +7 961 996-99-00.");
+            hasError = true;
+          }
+
+          if (telegram === null) {
+            showLeadError(telegramInput, "Telegram укажите как username: marina_health или @marina_health. Можно оставить пустым, если есть телефон.");
+            hasError = true;
+          }
+
+          if (phone === "" && telegram === "") {
+            showLeadError(phoneInput, "Оставьте телефон или Telegram, чтобы мы могли связаться.");
+            showLeadError(telegramInput, "Оставьте Telegram или телефон, чтобы мы могли связаться.");
+            hasError = true;
+          }
+
+          if (hasError) {
+            setLeadMessage("Проверьте подсказки под полями и попробуйте отправить еще раз.", true);
+            return;
+          }
+
+          var lead = {
+            name: name,
+            phone: phone,
+            telegram: telegram,
+            page: window.location.href,
+            createdAt: new Date().toISOString(),
+          };
+
+          if (!leadFormEndpoint) {
+            setLeadMessage("Форма заполнена верно, но отправка в Telegram ещё не подключена. Сейчас нужно написать в Telegram или дождаться подключения сервера заявок.", true);
+            return;
+          }
+
+          submitButton.disabled = true;
+          submitButton.textContent = "Отправляем...";
+          try {
+            var response = await fetch(leadFormEndpoint, {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify(lead),
+            });
+
+            if (!response.ok) {
+              throw new Error("Request failed");
+            }
+
+            leadForm.reset();
+            setLeadMessage("Заявка отправлена. Мы скоро свяжемся с вами.", false);
+          } catch (error) {
+            setLeadMessage("Не получилось отправить заявку. Проверьте связь и попробуйте ещё раз.", true);
+          } finally {
+            submitButton.disabled = false;
+            submitButton.textContent = "Отправить заявку";
+          }
+        });
+      }
     </script>
   </body>
 </html>
