@@ -812,14 +812,15 @@
             </div>
             <div>
               <input
-                autocomplete="off"
+                autocomplete="email"
                 class="w-full h-14 rounded-2xl border-none bg-white/10 placeholder:text-white/60 focus:ring-2 focus:ring-white/30 text-white px-6"
-                id="lead-telegram"
-                name="telegram"
-                placeholder="@username в Telegram"
-                type="text"
+                id="lead-email"
+                inputmode="email"
+                name="email"
+                placeholder="Ваш email"
+                type="email"
               />
-              <p class="mt-2 hidden text-sm text-white/80" data-error-for="lead-telegram"></p>
+              <p class="mt-2 hidden text-sm text-white/80" data-error-for="lead-email"></p>
             </div>
             <button class="w-full bg-white text-primary h-[60px] rounded-2xl font-[880] text-lg active-scale text-center" type="submit">
               Отправить заявку
@@ -859,7 +860,6 @@
       });
 
       var leadFormEndpoint = "";
-      var leadTelegramFallbackUrl = "https://t.me/formylaHealth_bot";
 
       function showLeadError(input, message) {
         var error = document.querySelector('[data-error-for="' + input.id + '"]');
@@ -896,17 +896,15 @@
         return null;
       }
 
-      function normalizeTelegram(value) {
-        var username = value.trim();
-        if (!username) {
+      function normalizeEmail(value) {
+        var email = value.trim().toLowerCase();
+        if (!email) {
           return "";
         }
-        username = username.replace(/^https?:\/\/t\.me\//i, "").replace(/^t\.me\//i, "");
-        username = username.replace(/^@/, "");
-        if (!/^[a-zA-Z0-9_]{5,32}$/.test(username)) {
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) {
           return null;
         }
-        return "@" + username;
+        return email;
       }
 
       function setLeadMessage(message, isError, allowHtml) {
@@ -930,16 +928,16 @@
 
           var nameInput = document.querySelector("#lead-name");
           var phoneInput = document.querySelector("#lead-phone");
-          var telegramInput = document.querySelector("#lead-telegram");
+          var emailInput = document.querySelector("#lead-email");
           var submitButton = leadForm.querySelector('button[type="submit"]');
-          var fields = [nameInput, phoneInput, telegramInput];
+          var fields = [nameInput, phoneInput, emailInput];
           fields.forEach(clearLeadError);
           setLeadMessage("", false);
           document.querySelector("#lead-form-message").classList.add("hidden");
 
           var name = nameInput.value.trim();
           var phone = normalizePhone(phoneInput.value);
-          var telegram = normalizeTelegram(telegramInput.value);
+          var email = normalizeEmail(emailInput.value);
           var hasError = false;
 
           if (name.length < 2) {
@@ -952,14 +950,18 @@
             hasError = true;
           }
 
-          if (telegram === null) {
-            showLeadError(telegramInput, "Telegram укажите как username: marina_health или @marina_health. Можно оставить пустым, если есть телефон.");
+          if (email === "") {
+            showLeadError(emailInput, "Укажите email, чтобы мы могли отправить детали по программе.");
             hasError = true;
           }
 
-          if (phone === "" && telegram === "") {
-            showLeadError(phoneInput, "Оставьте телефон или Telegram, чтобы мы могли связаться.");
-            showLeadError(telegramInput, "Оставьте Telegram или телефон, чтобы мы могли связаться.");
+          if (email === null) {
+            showLeadError(emailInput, "Проверьте email: например, marina@example.com.");
+            hasError = true;
+          }
+
+          if (phone === "") {
+            showLeadError(phoneInput, "Оставьте телефон, чтобы мы могли связаться.");
             hasError = true;
           }
 
@@ -971,17 +973,13 @@
           var lead = {
             name: name,
             phone: phone,
-            telegram: telegram,
+            email: email,
             page: window.location.href,
             createdAt: new Date().toISOString(),
           };
 
           if (!leadFormEndpoint) {
-            setLeadMessage(
-              'Не получилось отправить заявку автоматически. Напишите нам в Telegram: <a class="font-bold underline underline-offset-4" href="' + leadTelegramFallbackUrl + '" target="_blank" rel="noopener">@formylaHealth_bot</a>.',
-              true,
-              true
-            );
+            setLeadMessage("Не получилось отправить заявку. Попробуйте ещё раз позже.", true);
             return;
           }
 
